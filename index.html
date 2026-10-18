@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#6A2C91" />
+    <title>Xebia Employee Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="boot" style="font-family:system-ui,sans-serif;max-width:480px;margin:15vh auto;padding:24px;color:#1e1530">
+        <h2 style="color:#6a2c91">Xebia Employee Portal</h2>
+        <p id="boot-msg">Loading…</p>
+      </div>
+    </div>
+    <script>
+      // If this page is opened by double-clicking index.html (file://), or the JS never starts,
+      // show a helpful message instead of a blank white screen.
+      (function () {
+        var m = document.getElementById('boot-msg');
+        if (location.protocol === 'file:') {
+          m.innerHTML = 'This is a Vite project, so it cannot be opened by double-clicking <b>index.html</b>.<br><br>' +
+            'In a terminal, inside this folder, run:<br><code>npm install</code><br><code>npm run dev</code><br><br>' +
+            'Then open <b>http://localhost:5173</b> in your browser.';
+        } else {
+          setTimeout(function () {
+            if (document.getElementById('boot')) m.innerHTML = 'The app did not start. Open the browser console (F12) to see the error.';
+          }, 4000);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
